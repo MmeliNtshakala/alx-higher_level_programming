@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 
-def suare_marix_simple(matrix=[]):
-    return [list(map(lambda x: x ** 2, row)) for row in matrix]
+def square_matrix_simple(matrix=[]):
+    return [[num**2 for num in row] for row in matrix]
