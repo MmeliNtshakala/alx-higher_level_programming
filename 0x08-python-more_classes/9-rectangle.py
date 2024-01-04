@@ -9,7 +9,6 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle."""
         type(self).number_of_instances += 1
         self.width = width
         self.height = height
@@ -56,14 +55,18 @@ class Rectangle:
             return (rect_1)
         return (rect_2)
 
+    @classmethod
+    def square(cls, size=0):
+        return (cls(size, size))
+
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ("")
 
         rect = []
-        for i in range(self.__height):
-            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
-            if i != self.__height - 1:
+        for idx in range(self.__height):
+            [rect.append(str(self.print_symbol)) for i in range(self.__width)]
+            if idx != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
 
